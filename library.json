@@ -1,0 +1,16 @@
+{
+  "name": "MaixAmigo",
+  "description": "A K210 Arduino board",
+  "keywords": "MaixAmigo",
+  "authors": {
+    "name": "UT2UH, MaixAmigo",
+    "url": "http://www.maix.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/UT2UH/MaixAmigo.git"
+  },
+  "version": "0.0.1",
+  "framework": "arduino",
+  "platforms": "k210"
+}
