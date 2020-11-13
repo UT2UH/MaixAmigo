@@ -146,7 +146,7 @@ using namespace colors;
     #ifdef ARDUINO_MAIX_AMIGO
 
       #ifdef TFT_eSPI_TOUCH_EMULATION
-        // Emulates the TFT_eSPI touch interface using Maix.Touch
+        // Emulates the TFT_eSPI touch interface using MA.Touch
        public:
         uint8_t getTouchRaw(uint16_t *x, uint16_t *y);
         uint16_t getTouchRawZ(void);

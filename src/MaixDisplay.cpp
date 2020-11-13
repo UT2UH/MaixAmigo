@@ -650,7 +650,7 @@ void MaixDisplay::popState() {
 
 #ifdef TFT_eSPI_TOUCH_EMULATION
 
-// Emulates the native (resistive) TFT_eSPI touch interface using MaixTouch
+// Emulates the native (resistive) TFT_eSPI touch interface using MA.Touch
 
 uint8_t MaixDisplay::getTouchRaw(uint16_t *x, uint16_t *y) {
   return getTouch(x, y);

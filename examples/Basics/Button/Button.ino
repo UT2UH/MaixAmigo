@@ -8,7 +8,7 @@
 // The setup() function runs once each time the micro-controller starts
 void setup() {
   // init lcd, serial, but don't init sd card
-  MA.begin(true, false, true);
+  MA.begin(true, false, true, true);
   MA.Lcd.clear(TFT_BLACK);
   MA.Lcd.setTextColor(TFT_YELLOW);
   MA.Lcd.setTextSize(2);
@@ -22,14 +22,15 @@ void setup() {
 
 // Add the main program code into the continuous loop() function
 void loop() {
+  // update button state
   MA.update();
  
   // if you want to use Releasefor("was released for"), use .wasReleasefor(int time) below
-  if (MA.BtnA.wasReleased()) {
+  if (MA.BtnA.wasReleased() || MA.BtnA.pressedFor(1000, 200)) {
     MA.Lcd.print('A');
-  } else if (MA.BtnB.wasReleased()) {
+  } else if (MA.BtnB.wasReleased() || MA.BtnB.pressedFor(1000, 200)) {
     MA.Lcd.print('B');
-  } else if (MA.BtnC.wasReleased()) {
+  } else if (MA.BtnC.wasReleased() || MA.BtnC.pressedFor(1000, 200)) {
     MA.Lcd.print('C');
   } else if (MA.BtnB.wasReleasefor(700)) {
     MA.Lcd.clear(TFT_BLACK);

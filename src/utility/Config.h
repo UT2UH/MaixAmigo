@@ -2,19 +2,27 @@
   #define _CONFIG_H_
 
   #define TFT     MaixDisplay::instance
-  #define TFT_eSPI_TOUCH_EMULATION
+  //#define TFT_eSPI_TOUCH_EMULATION
   #define TOUCH		MaixTouch::instance
   #define BUTTONS	MaixButtons::instance
 
   // UART
   #define USE_SERIAL Serial
 
+  // Buttons
+  #define BTN_A 0
+  #define BTN_B 1
+  #define BTN_C 2
+  #define BUTTON_A 0
+  #define BUTTON_B 1
+  #define BUTTON_C 2
+
   #define ARDUINO_MAIX_AMIGO
 
   #if defined(ARDUINO_MAIX_AMIGO)
 
     #define DEFAULT_ROTATION   0
-
+    //#define TFT_eSPI_TOUCH_EMULATION
     #define TOUCH_W          320
     #define TOUCH_H          480
     #define CST_DEVICE_ADDR 0x38  //FT6236U
@@ -72,7 +80,7 @@
   #elif defined( ARDUINO_MAIX_GO )
 
     #define DEFAULT_ROTATION   0
-
+    #define TFT_eSPI_TOUCH_EMULATION
     #define TOUCH_W          320
     #define TOUCH_H          240
     #define CST_DEVICE_ADDR 0x48  //NS2009

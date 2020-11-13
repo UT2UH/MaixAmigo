@@ -94,7 +94,8 @@
 
         // Power
       #if defined (ARDUINO_MAIX_AMIGO) || defined(ARDUINO_MAIX_CUBE) || defined (ARDUINO_M5STICK_V)
-        AXP1XX Axp = AXP1XX();
+        //AXP1XX Axp = AXP1XX();
+        AXP1XX Axp;
       #endif
 
         // LCD
@@ -115,9 +116,17 @@
         Button background = Button(0, 0, TOUCH_W, TOUCH_H, true, "background");
 
         // Touch version of the buttons on Maix Amigo 320x480 TFT, on screen
-        Button BtnA = Button(10,440,110,40, true ,"BtnA");
-        Button BtnB = Button(130,440,70,40, true, "BtnB");
-        Button BtnC = Button(230,440,80,40, true, "BtnC");
+        // Button BtnA = Button(3,458,102,21, true ,"BtnA");
+        // Button BtnB = Button(109,458,102,21, true, "BtnB");
+        // Button BtnC = Button(215,458,102,21, true, "BtnC");
+        #define DEBOUNCE_MS 10
+        Button BtnA = Button(BUTTON_A_PIN, true, DEBOUNCE_MS, "hw",
+                             3, 18, 102, 21, false, "BtnA");
+        Button BtnB = Button(BUTTON_B_PIN, true, DEBOUNCE_MS, "hw",
+                             109, 18, 102, 21, false, "BtnB");
+        Button BtnC = Button(BUTTON_C_PIN, true, DEBOUNCE_MS, "hw",
+                             215, 18, 102, 21, false, "BtnC");
+
       #elif defined (ARDUINO_MAIX_GO)
         // Default "button" that gets events where there is no button.
         Button background = Button(0, 0, TOUCH_W, TOUCH_H, true, "background");
@@ -126,11 +135,15 @@
         Button BtnA = Button(10,200,110,40, true ,"BtnA");
         Button BtnB = Button(130,200,70,40, true, "BtnB");
         Button BtnC = Button(230,200,80,40, true, "BtnC");
+        
       #else
-        // TODO hardware buttons for all other boards
-        Button BtnA = Button(10,200,110,20, true ,"BtnA");
-        Button BtnB = Button(130,200,70,20, true, "BtnB");
-        Button BtnC = Button(230,200,80,20, true, "BtnC");
+        #define DEBOUNCE_MS 10
+        Button BtnA = Button(BUTTON_A_PIN, true, DEBOUNCE_MS, "hw",
+                             3, 218, 102, 21, true, "BtnA");
+        Button BtnB = Button(BUTTON_B_PIN, true, DEBOUNCE_MS, "hw",
+                             109, 218, 102, 21, true, "BtnB");
+        Button BtnC = Button(BUTTON_C_PIN, true, DEBOUNCE_MS, "hw",
+                             215, 218, 102, 21, true, "BtnC");
       #endif
 
         //IMU

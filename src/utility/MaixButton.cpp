@@ -22,6 +22,7 @@ Button::Button(int16_t x_, int16_t y_, int16_t w_, int16_t h_,
   dx = dx_;
   dy = dy_;
   r = r_;
+  _hidden = false;
   init();
 }
 
@@ -45,6 +46,7 @@ Button::Button(uint8_t pin_, uint8_t invert_, uint32_t dbTime_,
   dx = dx_;
   dy = dy_;
   r = r_;
+  _hidden = false;
   init();
 }
 
