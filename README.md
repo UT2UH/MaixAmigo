@@ -1,6 +1,20 @@
-# MaixAmigo Library
+# MaixAmigo Library - A work in progress!
 
-This library is a *mimic* of the original [M5Stack](https://github.com/m5stack/M5Stack/) and next generation [M5Core2](https://github.com/ropg/M5Core2) libraries and supports the Maix Amigo and Maix Go (and maybe other) development devices under the Sipeed Maixduino Arduino core.
+This library is a *mimic* of the original [M5Stack](https://github.com/m5stack/M5Stack/) and next generation [M5Core2](https://github.com/ropg/M5Core2) libraries and right now supports the Maix Amigo and Maix Go development devices under the Sipeed Maixduino Arduino core.
+
+  - [Amigo](https://dl.sipeed.com/MAIX/HDK/Sipeed-Amigo)
+  - [Go](https://dl.sipeed.com/MAIX/HDK/Sipeed-Maix-GO)
+
+This is still beta quality, most examples will fail due to the minor syntax changes. 
+Support coming soon:
+
+  - [Dock](https://dl.sipeed.com/MAIX/HDK/Sipeed-Maix-Dock)
+  - [M5StickV](https://www.hardkernel.com/shop/odroid-go/)
+  - [Cube](https://dl.sipeed.com/MAIX/HDK/Sipeed-Maix-Cube)
+  - [Maixduino](https://dl.sipeed.com/MAIX/HDK/Sipeed-Maixduino)
+  - [BiT](https://dl.sipeed.com/MAIX/HDK/Sipeed-Maix-Bit)
+  - [Nano](https://dl.sipeed.com/MAIX/HDK/Sipeed-Maix-Nano)
+  - [M5UnitV](https://www.tindie.com/products/lspoplove/dstike-d-duino-32-xs/)
 
 GFX implementation is based on famous [Bodmer/TFT_eSPI](https://github.com/Bodmer/TFT_eSPI) library and courtesy of @fukuenbiz who shared his K210 driver code for the library [fukuen/TFT-eSPI](https://github.com/fukuen/TFT_eSPI).
 
@@ -24,19 +38,6 @@ Automatic board selection is based on the boards.txt definition, so changing the
 
 <img src="https://maixpy.sipeed.com/assets/hardware/maix_amigo/sipeed_maix_amigo_vi.png" alt="Maix Amigo layout" width="602" height="898">
 
-  - [Amigo](https://dl.sipeed.com/MAIX/HDK/Sipeed-Amigo)
-  - [Go](https://dl.sipeed.com/MAIX/HDK/Sipeed-Maix-GO)
-
-This is still beta quality, most examples will fail due to the minor syntax changes. 
-Support coming soon:
-
-  - [Dock](https://dl.sipeed.com/MAIX/HDK/Sipeed-Maix-Dock)
-  - [M5StickV](https://www.hardkernel.com/shop/odroid-go/)
-  - [Cube](https://dl.sipeed.com/MAIX/HDK/Sipeed-Maix-Cube)
-  - [Maixduino](https://dl.sipeed.com/MAIX/HDK/Sipeed-Maixduino)
-  - [BiT](https://dl.sipeed.com/MAIX/HDK/Sipeed-Maix-Bit)
-  - [Nano](https://dl.sipeed.com/MAIX/HDK/Sipeed-Maix-Nano)
-  - [M5UnitV](https://www.tindie.com/products/lspoplove/dstike-d-duino-32-xs/)
 
 
 **Onboard I2C devices**
