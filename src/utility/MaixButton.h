@@ -730,11 +730,10 @@ class Gesture;
 #include "utility/PointAndZone.h"
 #include "utility/Config.h"
 
-#define ARDUINO_MAIX_AMIGO
 
-#ifdef ARDUINO_MAIX_AMIGO
+#if defined (MAIX_AMIGO) || defined (MAIX_GO)
 #include <MaixTouch.h>
-#endif /* ARDUINO_MAIX_AMIGO */
+#endif /* MAIX_AMIGO */
 
 
 #define BUTTON_FREEFONT FSS9

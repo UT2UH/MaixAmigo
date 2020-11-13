@@ -4,7 +4,6 @@
 #include "utility/Config.h"
 #include "MaixAmigo.h"
 
-#define ARDUINO_MAIX_AMIGO
 
 MaixAmigo::MaixAmigo() : isInited(0) {
 }
@@ -31,7 +30,7 @@ void MaixAmigo::begin(bool LCDEnable, bool SDEnable, bool SerialEnable, bool I2C
   }
 
   // I2C PMIC AXP173/AXP192
-  #if defined(ARDUINO_MAIX_AMIGO)
+  #if defined(MAIX_AMIGO)
     // Minimal setup to get Amigo powered
     // Axp.setLDO4(1500);
     // Axp.setLDO2(1800);
@@ -49,7 +48,7 @@ void MaixAmigo::begin(bool LCDEnable, bool SDEnable, bool SerialEnable, bool I2C
     };
     Axp.begin(initAmigo);
 
-  #elif defined(ARDUINO_MAIX_CUBE)
+  #elif defined(MAIX_CUBE)
     // Minimal setup to get Cube powered
     Axp.setLDO4(1500);
     Axp.setLDO2(1800);
@@ -66,7 +65,7 @@ void MaixAmigo::begin(bool LCDEnable, bool SDEnable, bool SerialEnable, bool I2C
     //   .BACKUP = true, //35
     // };
     // Axp.begin(initCube);
-  #elif defined(ARDUINO_M5STICK_V)
+  #elif defined(M5STICK_V)
     // writeByte(0x46, 0xFF); //Clear interupts
 
     // writeByte(0x23, 0x08); //Set DC-DC2 (VCore) to 0V9
@@ -110,14 +109,14 @@ void MaixAmigo::begin(bool LCDEnable, bool SDEnable, bool SerialEnable, bool I2C
   }
 
   // Touch init
-  #if defined (ARDUINO_MAIX_AMIGO) || defined (ARDUINO_MAIX_GO)
+  #if defined (MAIX_AMIGO) || defined (MAIX_GO)
     Touch.begin();  // Touch begin after AXP begin. (Reset at the start of AXP)
   #endif
 
   // IMU init
-  #if defined (ARDUINO_MAIX_AMIGO) || defined (ARDUINO_MAIX_GO)
+  #if defined (MAIX_AMIGO) || defined (MAIX_GO)
     Msa.begin();  // MSA30x
-  #elif defined(ARDUINO_M5STICK_V)
+  #elif defined(M5STICK_V)
     Mpu.begin();  // MPU6886
   #endif
 

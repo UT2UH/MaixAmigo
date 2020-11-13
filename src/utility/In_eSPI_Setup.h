@@ -1,6 +1,4 @@
-#define ARDUINO_MAIX_AMIGO
-  
-#if defined (ARDUINO_MAIX_AMIGO)
+#if defined (MAIX_AMIGO)
   // ILI9486 320 x 480 display in 8-bit parallel mode
   #define       ILI9486_DRIVER
   #include "TFT_Drivers/ILI9486_Defines.h"
@@ -17,7 +15,7 @@
 
   #define SPI_FREQUENCY     20000000
 
-#elif defined (ARDUINO_MAIX_CUBE)
+#elif defined (MAIX_CUBE)
   // ST7789 240 x 240 1.3" IPS display in 8-bit parallel mode
   #define      ST7789_2_DRIVER
   #include "TFT_Drivers/ST7789_2_Defines.h"
@@ -41,7 +39,7 @@
 
   #define SPI_FREQUENCY     20000000
 
-#elif defined (ARDUINO_MAIX_GO)
+#elif defined (MAIX_GO)
   // ST7789 240 x 320 display in 8-bit parallel mode
   #define      ST7789_2_DRIVER
   #include "TFT_Drivers/ST7789_2_Defines.h"
@@ -70,7 +68,7 @@
 
   #define SPI_FREQUENCY     20000000
 
-#elif defined(ARDUINO_MAIX_DUINO)
+#elif defined(MAIX_DUINO)
   // ST7789 240 x 320 display in 8-bit parallel mode
   #define      ST7789_2_DRIVER
   #include "TFT_Drivers/ST7789_2_Defines.h"
@@ -91,7 +89,7 @@
 
   #define SPI_FREQUENCY     20000000
 
-#elif defined (ARDUINO_DOCK_M1) || defined (ARDUINO_DOCK_M1W)
+#elif defined (MAIX_DOCK_M1) || defined (MAIX_DOCK_M1W)
   // ST7789 240 x 320 display in 8-bit parallel mode
   #define      ST7789_2_DRIVER
   #include "TFT_Drivers/ST7789_2_Defines.h"
@@ -111,7 +109,7 @@
 
   #define SPI_FREQUENCY     20000000
 
-#elif defined (ARDUINO_MAIX_BIT) || defined (ARDUINO_MAIX_BIT_MIC)
+#elif defined (MAIX_BIT) || defined (MAIX_BIT_MIC)
   // ST7789 240 x 320 display in 8-bit parallel mode
   #define      ST7789_2_DRIVER
   #include "TFT_Drivers/ST7789_2_Defines.h"
@@ -131,7 +129,7 @@
 
   #define SPI_FREQUENCY     20000000
 
-#elif defined (ARDUINO_AIOT_DAAN)
+#elif defined (AIOT_DAAN)
   // ST7789 240 x 320 display in 8-bit parallel mode
   #define      ST7789_2_DRIVER
   #include "TFT_Drivers/ST7789_2_Defines.h"
@@ -150,7 +148,7 @@
 
   #define SPI_FREQUENCY     20000000
 
-#elif defined (ARDUINO_M5STICK_V)
+#elif defined (M5STICK_V)
 // ST7789 240 x 280 display
   #define      ST7789_2_DRIVER
   #include "TFT_Drivers/ST7789_2_Defines.h"

@@ -77,10 +77,10 @@
     #include "MaixTouch.h"			    // MaixTouch
     #include "utility/MaixButton.h"	// MaixButtons, M5Events, Button, Gesture
 
-    #if defined (ARDUINO_M5STICK_V)
+    #if defined (M5STICK_V)
       #include "drivers/AXP1XX/AXP1XX.h"
       #include "drivers/MPU6886/MPU6886.h"
-    #elif defined (ARDUINO_MAIX_AMIGO) || defined(ARDUINO_MAIX_CUBE) || defined (ARDUINO_MAIX_DOCK)
+    #elif defined (MAIX_AMIGO) || defined(MAIX_CUBE) || defined (MAIX_DOCK)
       #include "drivers/AXP1XX/AXP1XX.h"
       #include "drivers/MSA30X/MSA30X.h"
     #endif
@@ -93,7 +93,7 @@
         void update();
 
         // Power
-      #if defined (ARDUINO_MAIX_AMIGO) || defined(ARDUINO_MAIX_CUBE) || defined (ARDUINO_M5STICK_V)
+      #if defined (MAIX_AMIGO) || defined(MAIX_CUBE) || defined (M5STICK_V)
         //AXP1XX Axp = AXP1XX();
         AXP1XX Axp;
       #endif
@@ -102,16 +102,16 @@
         MaixDisplay Lcd;
 
 		    // Touch
-      #if defined (ARDUINO_MAIX_AMIGO)
+      #if defined (MAIX_AMIGO)
         MaixTouch Touch;
-      #elif defined (ARDUINO_MAIX_GO)
+      #elif defined (MAIX_GO)
         MaixTouchNS2009 Touch;
       #endif
       
         // Buttons (global button and gesture functions)
         MaixButtons Buttons;
 
-      #if defined (ARDUINO_MAIX_AMIGO)
+      #if defined (MAIX_AMIGO)
         // Default "button" that gets events where there is no button.
         Button background = Button(0, 0, TOUCH_W, TOUCH_H, true, "background");
 
@@ -127,7 +127,7 @@
         Button BtnC = Button(BUTTON_C_PIN, true, DEBOUNCE_MS, "hw",
                              215, 18, 102, 21, false, "BtnC");
 
-      #elif defined (ARDUINO_MAIX_GO)
+      #elif defined (MAIX_GO)
         // Default "button" that gets events where there is no button.
         Button background = Button(0, 0, TOUCH_W, TOUCH_H, true, "background");
 
@@ -147,9 +147,9 @@
       #endif
 
         //IMU
-      #if defined (ARDUINO_M5STICK_V)
+      #if defined (M5STICK_V)
         MPU6886 Mpu;
-      #elif defined (ARDUINO_MAIX_AMIGO) || defined(ARDUINO_MAIX_CUBE) || defined (ARDUINO_MAIX_DOCK)
+      #elif defined (MAIX_AMIGO) || defined(MAIX_CUBE) || defined (MAIX_DOCK)
         //MSA30X Imu = MSA30X();
         MSA30X Msa;
       #endif

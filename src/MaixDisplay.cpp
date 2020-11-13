@@ -1,8 +1,8 @@
 #include "MaixDisplay.h"
 
-#ifdef ARDUINO_MAIX_AMIGO
+#ifdef MAIX_AMIGO
 #include <MaixTouch.h>
-#endif /* ARDUINO_MAIX_AMIGO */
+#endif /* MAIX_AMIGO */
 
 #define BLK_PWM_CHANNEL 7 // LEDC_CHANNEL_7
 
@@ -646,7 +646,7 @@ void MaixDisplay::popState() {
   if (s.gfxFont && s.gfxFont != gfxFont) setFreeFont(s.gfxFont);
 }
 
-#ifdef ARDUINO_MAIX_AMIGO
+#ifdef MAIX_AMIGO
 
 #ifdef TFT_eSPI_TOUCH_EMULATION
 
@@ -682,4 +682,4 @@ void MaixDisplay::setTouch(uint16_t *data) { return; }
 
 #endif /* TFT_eSPI_TOUCH_EMULATION */
 
-#endif /* ARDUINO_MAIX_AMIGO */
+#endif /* MAIX_AMIGO */

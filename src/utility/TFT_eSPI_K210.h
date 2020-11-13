@@ -20,10 +20,10 @@
     #include "In_eSPI_Setup.h"
 
 
-// #if defined(ARDUINO_M5STICK_V)
+// #if defined(M5STICK_V)
 //   #include <Wire.h>
 //   #include <AXP192.h>
-// #elif defined(ARDUINO_MAIX_CUBE) || defined(ARDUINO_MAIX_AMIGO)
+// #elif defined(MAIX_CUBE) || defined(MAIX_AMIGO)
 //   #include <Wire.h>
 //   #include <AXP173.h>
 // #endif
@@ -46,12 +46,12 @@ static spi_device_num_t g_spi_num;
 
 inline void tft_io_init(void)
 {
-// #if defined(ARDUINO_M5STICK_V)
+// #if defined(M5STICK_V)
 //   sysctl_set_power_mode(SYSCTL_POWER_BANK3,SYSCTL_POWER_V33);
 //   AXP192 Axp = AXP192();
 //   Wire.begin((uint8_t) SDA, (uint8_t) SCL, 400000);
 //   Axp.begin(true); //Wire is already enabled
-// #elif defined(ARDUINO_MAIX_CUBE) || defined(ARDUINO_MAIX_AMIGO)
+// #elif defined(MAIX_CUBE) || defined(MAIX_AMIGO)
 //   AXP173 Axp = AXP173();
 //   Wire.begin((uint8_t) SDA, (uint8_t) SCL, 400000);
 //   Axp.begin(true); //Wire is already enabled 
@@ -61,7 +61,7 @@ inline void tft_io_init(void)
   g_ss = SS_PIN;
   /* Init SPI IO map and function settings */
   fpioa_set_function(TFT_CS, (fpioa_function_t)(FUNC_SPI0_SS0 + SS_PIN));
-#if defined (ARDUINO_M5STICK_V)
+#if defined (M5STICK_V)
   fpioa_set_function(TFT_SCLK, FUNC_SPI0_SCLK);
 #else
   fpioa_set_function(TFT_WR,   FUNC_SPI0_SCLK);
@@ -80,7 +80,7 @@ inline void tft_io_init(void)
   gpio_set_pin(g_gpio_rst, GPIO_PV_HIGH);
 
   gpio_set_pin(g_gpio_rst, GPIO_PV_LOW);
-#if defined (ARDUINO_M5STICK_V)
+#if defined (M5STICK_V)
   spi_init(g_spi_num, SPI_WORK_MODE_0, SPI_FF_STANDARD, 8, 0);
 #else
   spi_init(g_spi_num, SPI_WORK_MODE_0, SPI_FF_OCTAL, 8, 0);
@@ -93,7 +93,7 @@ inline void tft_io_init(void)
 inline void tft_write_command(uint8_t cmd)
 {
     gpio_set_pin(g_gpio_dcx, GPIO_PV_LOW);
-#if defined (ARDUINO_M5STICK_V)
+#if defined (M5STICK_V)
     spi_init(g_spi_num, SPI_WORK_MODE_0, SPI_FF_STANDARD, 8, 0);
 #else
     spi_init(g_spi_num, SPI_WORK_MODE_0, SPI_FF_OCTAL, 8, 0);
@@ -106,7 +106,7 @@ inline void tft_write_command(uint8_t cmd)
 inline void tft_write_byte(uint8_t *data_buf, uint32_t length)
 {
     gpio_set_pin(g_gpio_dcx, GPIO_PV_HIGH);
-#if defined (ARDUINO_M5STICK_V)
+#if defined (M5STICK_V)
     spi_init(g_spi_num, SPI_WORK_MODE_0, SPI_FF_STANDARD, 8, 0);
 #else
     spi_init(g_spi_num, SPI_WORK_MODE_0, SPI_FF_OCTAL, 8, 0);
@@ -118,7 +118,7 @@ inline void tft_write_byte(uint8_t *data_buf, uint32_t length)
 inline void tft_write_half(uint16_t *data_buf, uint32_t length)
 {
     gpio_set_pin(g_gpio_dcx, GPIO_PV_HIGH);
-#if defined (ARDUINO_M5STICK_V)
+#if defined (M5STICK_V)
     spi_init(g_spi_num, SPI_WORK_MODE_0, SPI_FF_STANDARD, 16, 0);
 #else
     spi_init(g_spi_num, SPI_WORK_MODE_0, SPI_FF_OCTAL, 16, 0);
@@ -130,7 +130,7 @@ inline void tft_write_half(uint16_t *data_buf, uint32_t length)
 inline void tft_write_word(uint32_t *data_buf, uint32_t length)
 {
     gpio_set_pin(g_gpio_dcx, GPIO_PV_HIGH);
-#if defined (ARDUINO_M5STICK_V)
+#if defined (M5STICK_V)
     spi_init(g_spi_num, SPI_WORK_MODE_0, SPI_FF_STANDARD, 32, 0);
 #else
     spi_init(g_spi_num, SPI_WORK_MODE_0, SPI_FF_OCTAL, 32, 0);
@@ -142,7 +142,7 @@ inline void tft_write_word(uint32_t *data_buf, uint32_t length)
 inline void tft_fill_data(uint32_t *data_buf, uint32_t length)
 {
     gpio_set_pin(g_gpio_dcx, GPIO_PV_HIGH);
-#if defined (ARDUINO_M5STICK_V)
+#if defined (M5STICK_V)
     spi_init(g_spi_num, SPI_WORK_MODE_0, SPI_FF_STANDARD, 32, 0);
 #else
     spi_init(g_spi_num, SPI_WORK_MODE_0, SPI_FF_OCTAL, 32, 0);
@@ -153,7 +153,7 @@ inline void tft_fill_data(uint32_t *data_buf, uint32_t length)
 
 inline void tft_write_cs()
 {
-#if defined (ARDUINO_M5STICK_V)
+#if defined (M5STICK_V)
     spi_init(g_spi_num, SPI_WORK_MODE_0, SPI_FF_STANDARD, 8, 0);
 #else
     spi_init(g_spi_num, SPI_WORK_MODE_0, SPI_FF_OCTAL, 8, 0);
@@ -172,7 +172,7 @@ inline void tft_write_a_byte(uint8_t data)
 inline void tft_write_a_half(uint16_t data)
 {
 //    dmac_wait_done(g_dma_ch);
-#if defined (ARDUINO_M5STICK_V)
+#if defined (M5STICK_V)
     spi_init(g_spi_num, SPI_WORK_MODE_0, SPI_FF_STANDARD, 16, 0);
 #else
     spi_init(g_spi_num, SPI_WORK_MODE_0, SPI_FF_OCTAL, 16, 0);
@@ -186,7 +186,7 @@ inline void tft_write_a_word(uint32_t data)
     uint8_t tmp[4] = { static_cast<uint8_t>((data >> 24) & 0xff), static_cast<uint8_t>((data >> 16) & 0xff), static_cast<uint8_t>((data >> 8) & 0xff), static_cast<uint8_t>(data & 0xff) };
     //uint8_t tmp[4] = { ((data >> 24) & 0xff), ((data >> 16) & 0xff), ((data >> 8) & 0xff), (data & 0xff) };
     dmac_wait_done(g_dma_ch);
-#if defined (ARDUINO_M5STICK_V)
+#if defined (M5STICK_V)
     spi_init(g_spi_num, SPI_WORK_MODE_0, SPI_FF_STANDARD, 8, 0);
 #else
     spi_init(g_spi_num, SPI_WORK_MODE_0, SPI_FF_OCTAL, 8, 0);
@@ -198,7 +198,7 @@ inline void tft_write_a_word(uint32_t data)
 inline uint8_t tft_read_a_byte(void)
 {
     uint8_t tmp;
-#if defined (ARDUINO_M5STICK_V)
+#if defined (M5STICK_V)
     spi_init(g_spi_num, SPI_WORK_MODE_0, SPI_FF_STANDARD, 8, 0);
 #else
     spi_init(g_spi_num, SPI_WORK_MODE_0, SPI_FF_OCTAL, 8, 0);

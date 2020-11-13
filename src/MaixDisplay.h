@@ -143,7 +143,7 @@ using namespace colors;
      private:
       std::vector<DisplayState> _displayStateStack;
 
-    #ifdef ARDUINO_MAIX_AMIGO
+    #ifdef MAIX_AMIGO
 
       #ifdef TFT_eSPI_TOUCH_EMULATION
         // Emulates the TFT_eSPI touch interface using MA.Touch
@@ -157,6 +157,6 @@ using namespace colors;
         void setTouch(uint16_t *data);
       #endif /* TFT_eSPI_TOUCH_EMULATION */
 
-    #endif /* ARDUINO_MAIX_AMIGO */
+    #endif /* MAIX_AMIGO */
 };
 #endif /* _MAIXDISPLAY_H_ */

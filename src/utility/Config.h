@@ -17,9 +17,7 @@
   #define BUTTON_B 1
   #define BUTTON_C 2
 
-  #define ARDUINO_MAIX_AMIGO
-
-  #if defined(ARDUINO_MAIX_AMIGO)
+  #if defined(MAIX_AMIGO)
 
     #define DEFAULT_ROTATION   0
     //#define TFT_eSPI_TOUCH_EMULATION
@@ -49,7 +47,7 @@
     #define BUTTON_B_PIN      23
     #define BUTTON_C_PIN      20
 
-  #elif defined (ARDUINO_MAIX_CUBE)
+  #elif defined (MAIX_CUBE)
 
     #define DEFAULT_ROTATION   0
     #define TFT_LED           17
@@ -77,7 +75,7 @@
     #define BUTTON_B_PIN      11
     #define BUTTON_C_PIN      -1
 
-  #elif defined( ARDUINO_MAIX_GO )
+  #elif defined( MAIX_GO )
 
     #define DEFAULT_ROTATION   0
     #define TFT_eSPI_TOUCH_EMULATION
@@ -116,7 +114,7 @@
     #define BUTTON_B_PIN      16
     #define BUTTON_C_PIN      17
 
-  #elif defined(ARDUINO_MAIX_DUINO)
+  #elif defined(MAIX_DUINO)
 
     #define DEFAULT_ROTATION   0
 
@@ -148,7 +146,7 @@
     #define BUTTON_B_PIN      -1
     #define BUTTON_C_PIN      -1
 
-  #elif defined(ARDUINO_M1_DOCK) || defined( ARDUINO_M1W_DOCK )
+  #elif defined(MAIX_DOCK_M1) || defined( MAIX_DOCK_M1W )
 
     #define DEFAULT_ROTATION   0
 
@@ -179,7 +177,7 @@
     #define BUTTON_B_PIN      -1  //15
     #define BUTTON_C_PIN      -1  //17
 
-  #elif defined(ARDUINO_MAIX_BIT) || defined(ARDUINO_MAIX_BIT_MIC)
+  #elif defined(MAIX_BIT) || defined(MAIX_BIT_MIC)
 
     #define DEFAULT_ROTATION   0
 
@@ -200,7 +198,7 @@
     #define BUTTON_B_PIN      -1  //15
     #define BUTTON_C_PIN      -1  //17
 
-  #elif defined(ARDUINO_AIOT_DAAN)
+  #elif defined(AIOT_DAAN)
 
     #define DEFAULT_ROTATION   0
 
@@ -221,7 +219,7 @@
     #define BUTTON_B_PIN      -1  //15
     #define BUTTON_C_PIN      -1  //17
 
-  #elif defined(ARDUINO_M5STICK_V)
+  #elif defined(M5STICK_V)
 
     #define AXP1XX_INT        23
     
@@ -250,7 +248,7 @@
     #define BUTTON_B_PIN      37
     #define BUTTON_C_PIN      -1
 
-  #elif defined( ARDUINO_M5UNIT_V  )
+  #elif defined( M5UNIT_V  )
 
     #define DEFAULT_ROTATION   0
     
